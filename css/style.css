@@ -118,6 +118,9 @@ html, body {
 .ascii-art {
     color: #00ff00;
     line-height: 1.2;
+    white-space: pre;
+    overflow-x: auto;
+    display: block;
 }
 
 /* Blinking cursor effect */
@@ -191,6 +194,16 @@ html, body {
 
     .output-line {
         word-break: break-word;
+    }
+
+    .ascii-art {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .ascii-art {
+        font-size: 8px;
     }
 }
 
