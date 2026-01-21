@@ -79,7 +79,7 @@
         sessionId: null,
 
         init: function() {
-            fetch('/api/session/start', { method: 'POST' })
+            fetch('/api/session.php', { method: 'POST' })
                 .then(response => response.json())
                 .then(data => {
                     this.sessionId = data.sessionId;
@@ -92,7 +92,7 @@
         log: function(command) {
             if (!this.sessionId) return;
 
-            fetch('/api/log', {
+            fetch('/api/log.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
