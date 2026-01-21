@@ -1,4 +1,3 @@
 .claude/
-node_modules/
 logs/*.txt
 logs/*.log
