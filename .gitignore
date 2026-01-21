@@ -1,3 +1,4 @@
 .claude/
 logs/*.txt
 logs/*.log
+contacts/*.txt

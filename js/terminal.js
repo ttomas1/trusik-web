@@ -273,8 +273,11 @@
 `;
             this.print(ascii, 'ascii-art');
             this.print('');
-            this.print('Welcome to trusik.com terminal interface', 'output-header');
-            this.print('Type "help" for available commands or "info" for business information.', 'output-dim');
+            this.print('Professional IT Security & Consulting Services', 'output-header');
+            this.print('Hainburg an der Donau, Austria | Worldwide Remote Services', 'output-dim');
+            this.print('');
+            this.print('Type "services" for offerings | "help" for commands', 'output-info');
+            this.print('Type "consultation" to request a free initial consultation', 'output-success');
             this.print('');
         }
     };
@@ -308,17 +311,27 @@
                 execute: function() {
                     Terminal.print('');
                     Terminal.print('TRUSIK.COM', 'output-header');
-                    Terminal.print('─'.repeat(40), 'output-dim');
+                    Terminal.print('─'.repeat(50), 'output-dim');
                     Terminal.print('');
-                    Terminal.print('  Professional IT Solutions & Consulting', 'output-info');
+                    Terminal.print('  Professional IT Security & Consulting Services', 'output-info');
                     Terminal.print('');
-                    Terminal.print('  Services:', 'output-header');
-                    Terminal.print('  • Software Development', 'output-response');
-                    Terminal.print('  • Security Consulting', 'output-response');
-                    Terminal.print('  • System Administration', 'output-response');
-                    Terminal.print('  • Cloud Infrastructure', 'output-response');
+                    Terminal.print('  Specializations:', 'output-header');
+                    Terminal.print('  • AI Security & Implementation', 'output-response');
+                    Terminal.print('  • Penetration Testing & Audits', 'output-response');
+                    Terminal.print('  • Emergency Data Recovery', 'output-response');
+                    Terminal.print('  • Cloud Security Architecture', 'output-response');
+                    Terminal.print('  • Reverse Engineering Analysis', 'output-response');
+                    Terminal.print('  • Digital Forensics', 'output-response');
                     Terminal.print('');
-                    Terminal.print('  Contact: [Business information to be provided]', 'output-dim');
+                    Terminal.print('  Background:', 'output-header');
+                    Terminal.print('  • Multi-domain expertise: SW/HW/Legal/Psychology', 'output-response');
+                    Terminal.print('  • ProtoWay s.r.o. - NeoDCP Player Development', 'output-response');
+                    Terminal.print('  • METREX s.r.o. - Software & Metallurgy Services', 'output-response');
+                    Terminal.print('');
+                    Terminal.print('  Location: Hainburg an der Donau, Austria', 'output-dim');
+                    Terminal.print('  Service Area: Vienna region + Worldwide (remote)', 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  Type "services" for detailed offerings', 'output-success');
                     Terminal.print('');
                 }
             },
@@ -348,6 +361,66 @@
                 description: 'Echo a message',
                 execute: function(args) {
                     Terminal.print(args.join(' ') || '');
+                }
+            },
+
+            services: {
+                description: 'Overview of professional services',
+                execute: function() {
+                    Terminal.print('');
+                    Terminal.print('PROFESSIONAL IT SERVICES', 'output-header');
+                    Terminal.print('─'.repeat(50), 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  CORE OFFERINGS', 'output-info');
+                    Terminal.print('  • AI Security & Implementation', 'output-response');
+                    Terminal.print('  • Penetration Testing & Security Audits', 'output-response');
+                    Terminal.print('  • Emergency Data Recovery', 'output-response');
+                    Terminal.print('');
+                    Terminal.print('  ADDITIONAL SERVICES', 'output-info');
+                    Terminal.print('  • Cloud Migration & Security', 'output-response');
+                    Terminal.print('  • Reverse Engineering Analysis', 'output-response');
+                    Terminal.print('  • Legacy System Modernization', 'output-response');
+                    Terminal.print('  • Digital Forensics', 'output-response');
+                    Terminal.print('');
+                    Terminal.print('  Type specific service commands for details:', 'output-dim');
+                    Terminal.print('  ai-security, pentest, data-recovery, pricing', 'output-dim');
+                    Terminal.print('');
+                }
+            },
+
+            contact: {
+                description: 'Get in touch',
+                execute: function() {
+                    Terminal.print('');
+                    Terminal.print('CONTACT INFORMATION', 'output-header');
+                    Terminal.print('─'.repeat(50), 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  Location: Hainburg an der Donau, Lower Austria, Austria', 'output-info');
+                    Terminal.print('');
+                    Terminal.print('  Service Area:', 'output-header');
+                    Terminal.print('  • On-site: Vienna metropolitan area', 'output-response');
+                    Terminal.print('  • Remote: Worldwide', 'output-response');
+                    Terminal.print('');
+                    Terminal.print('  For inquiries, type: consultation', 'output-dim');
+                    Terminal.print('  For emergencies, type: emergency', 'output-dim');
+                    Terminal.print('');
+                }
+            },
+
+            consultation: {
+                description: 'Request a consultation',
+                execute: function() {
+                    Terminal.print('');
+                    Terminal.print('FREE INITIAL CONSULTATION', 'output-header');
+                    Terminal.print('─'.repeat(50), 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  Schedule a 30-minute consultation to discuss:', 'output-info');
+                    Terminal.print('  • Your security requirements', 'output-response');
+                    Terminal.print('  • Project scope and timeline', 'output-response');
+                    Terminal.print('  • Custom service packages', 'output-response');
+                    Terminal.print('');
+                    Terminal.print('  Type "contact-form" to submit a request', 'output-success');
+                    Terminal.print('');
                 }
             }
         },
@@ -605,6 +678,315 @@
                         Terminal.print('TrusikOS trusik.com 1.0.0 Web Browser x86_64');
                     } else {
                         Terminal.print('TrusikOS');
+                    }
+                }
+            },
+
+            'ai-security': {
+                execute: function() {
+                    Terminal.print('');
+                    Terminal.print('AI SECURITY & IMPLEMENTATION', 'output-header');
+                    Terminal.print('─'.repeat(50), 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  SERVICES OFFERED', 'output-info');
+                    Terminal.print('');
+                    Terminal.print('  Security Assessment:', 'output-header');
+                    Terminal.print('  • AI/ML model vulnerability testing', 'output-response');
+                    Terminal.print('  • Shadow AI detection and inventory', 'output-response');
+                    Terminal.print('  • Data leakage risk analysis', 'output-response');
+                    Terminal.print('  • Adversarial attack simulation', 'output-response');
+                    Terminal.print('');
+                    Terminal.print('  Implementation Support:', 'output-header');
+                    Terminal.print('  • Secure AI integration consulting', 'output-response');
+                    Terminal.print('  • AI governance framework development', 'output-response');
+                    Terminal.print('  • Staff training on AI security', 'output-response');
+                    Terminal.print('  • Ongoing monitoring and support', 'output-response');
+                    Terminal.print('');
+                    Terminal.print('  Compliance:', 'output-header');
+                    Terminal.print('  • EU AI Act readiness assessment', 'output-response');
+                    Terminal.print('  • GDPR compliance for AI systems', 'output-response');
+                    Terminal.print('  • Risk management documentation', 'output-response');
+                    Terminal.print('');
+                    Terminal.print('  TYPICAL ENGAGEMENT', 'output-info');
+                    Terminal.print('  Duration: 2-4 weeks initial assessment', 'output-dim');
+                    Terminal.print('  Delivery: Comprehensive report + remediation plan', 'output-dim');
+                    Terminal.print('  Follow-up: Monthly retainer options available', 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  Type "pricing" for rates | "consultation" to inquire', 'output-success');
+                    Terminal.print('');
+                }
+            },
+
+            pentest: {
+                execute: function() {
+                    Terminal.print('');
+                    Terminal.print('PENETRATION TESTING & SECURITY AUDITS', 'output-header');
+                    Terminal.print('─'.repeat(50), 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  TESTING SCOPE', 'output-info');
+                    Terminal.print('');
+                    Terminal.print('  Network Security:', 'output-header');
+                    Terminal.print('  • External/internal network penetration testing', 'output-response');
+                    Terminal.print('  • Wireless network security assessment', 'output-response');
+                    Terminal.print('  • Firewall and IDS/IPS configuration review', 'output-response');
+                    Terminal.print('  • Network segmentation analysis', 'output-response');
+                    Terminal.print('');
+                    Terminal.print('  Application Security:', 'output-header');
+                    Terminal.print('  • Web application penetration testing', 'output-response');
+                    Terminal.print('  • API security assessment', 'output-response');
+                    Terminal.print('  • Mobile application testing', 'output-response');
+                    Terminal.print('  • Source code security review', 'output-response');
+                    Terminal.print('');
+                    Terminal.print('  Infrastructure:', 'output-header');
+                    Terminal.print('  • Cloud security assessment (AWS/Azure/GCP)', 'output-response');
+                    Terminal.print('  • Active Directory security audit', 'output-response');
+                    Terminal.print('  • Database security review', 'output-response');
+                    Terminal.print('  • IoT/SCADA system testing', 'output-response');
+                    Terminal.print('');
+                    Terminal.print('  Social Engineering:', 'output-header');
+                    Terminal.print('  • Phishing simulations', 'output-response');
+                    Terminal.print('  • Physical security assessment', 'output-response');
+                    Terminal.print('  • Security awareness training', 'output-response');
+                    Terminal.print('');
+                    Terminal.print('  DELIVERABLES', 'output-info');
+                    Terminal.print('  • Executive summary for management', 'output-dim');
+                    Terminal.print('  • Technical findings with severity ratings', 'output-dim');
+                    Terminal.print('  • Proof-of-concept exploits (where applicable)', 'output-dim');
+                    Terminal.print('  • Detailed remediation recommendations', 'output-dim');
+                    Terminal.print('  • Re-testing of fixed vulnerabilities', 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  Type "pricing" for rates | "consultation" to inquire', 'output-success');
+                    Terminal.print('');
+                }
+            },
+
+            'data-recovery': {
+                execute: function() {
+                    Terminal.print('');
+                    Terminal.print('EMERGENCY DATA RECOVERY', 'output-header');
+                    Terminal.print('─'.repeat(50), 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  RECOVERY SERVICES', 'output-info');
+                    Terminal.print('');
+                    Terminal.print('  Hardware Failures:', 'output-header');
+                    Terminal.print('  • Hard drive (HDD/SSD) recovery', 'output-response');
+                    Terminal.print('  • RAID array reconstruction', 'output-response');
+                    Terminal.print('  • Electronic component repair', 'output-response');
+                    Terminal.print('  • Clean room data extraction', 'output-response');
+                    Terminal.print('');
+                    Terminal.print('  Software Issues:', 'output-header');
+                    Terminal.print('  • Corrupted file system recovery', 'output-response');
+                    Terminal.print('  • Deleted data restoration', 'output-response');
+                    Terminal.print('  • Ransomware decryption attempts', 'output-response');
+                    Terminal.print('  • Database corruption repair', 'output-response');
+                    Terminal.print('');
+                    Terminal.print('  Forensics:', 'output-header');
+                    Terminal.print('  • Digital evidence preservation', 'output-response');
+                    Terminal.print('  • Chain of custody documentation', 'output-response');
+                    Terminal.print('  • Legal-grade forensic reports', 'output-response');
+                    Terminal.print('  • Expert witness services', 'output-response');
+                    Terminal.print('');
+                    Terminal.print('  RESPONSE TIME', 'output-info');
+                    Terminal.print('  • Critical: 24-hour response', 'output-warning');
+                    Terminal.print('  • Urgent: 48-hour response', 'output-response');
+                    Terminal.print('  • Standard: 5-7 business days', 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  "No data, no fee" policy for most recoveries', 'output-success');
+                    Terminal.print('');
+                    Terminal.print('  Type "emergency" for critical support', 'output-warning');
+                    Terminal.print('  Type "consultation" for standard inquiries', 'output-dim');
+                    Terminal.print('');
+                }
+            },
+
+            pricing: {
+                execute: function() {
+                    Terminal.print('');
+                    Terminal.print('SERVICE PACKAGES & RATES', 'output-header');
+                    Terminal.print('─'.repeat(50), 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  HOURLY RATES', 'output-info');
+                    Terminal.print('  Standard Consulting: 120 EUR/hour', 'output-response');
+                    Terminal.print('  Emergency Response: 180 EUR/hour', 'output-warning');
+                    Terminal.print('  After-hours/Weekend: 200 EUR/hour', 'output-warning');
+                    Terminal.print('');
+                    Terminal.print('  PACKAGE 1: SECURITY AUDIT PRO', 'output-header');
+                    Terminal.print('  Duration: 1-2 weeks', 'output-dim');
+                    Terminal.print('  Includes:', 'output-dim');
+                    Terminal.print('  • Comprehensive penetration testing', 'output-response');
+                    Terminal.print('  • Security policy review', 'output-response');
+                    Terminal.print('  • AI/Shadow AI assessment', 'output-response');
+                    Terminal.print('  • GDPR/CRA compliance check', 'output-response');
+                    Terminal.print('  • Detailed report + remediation roadmap', 'output-response');
+                    Terminal.print('  Price: 5,000 - 15,000 EUR', 'output-success');
+                    Terminal.print('');
+                    Terminal.print('  PACKAGE 2: AI INTEGRATION CONSULTING', 'output-header');
+                    Terminal.print('  Monthly Retainer', 'output-dim');
+                    Terminal.print('  Includes:', 'output-dim');
+                    Terminal.print('  • AI strategy development', 'output-response');
+                    Terminal.print('  • Secure implementation support', 'output-response');
+                    Terminal.print('  • Staff training (up to 4 hours/month)', 'output-response');
+                    Terminal.print('  • Priority support access', 'output-response');
+                    Terminal.print('  Price: 2,000 - 5,000 EUR/month', 'output-success');
+                    Terminal.print('');
+                    Terminal.print('  PACKAGE 3: CLOUD TRANSFORMATION', 'output-header');
+                    Terminal.print('  Project-based pricing', 'output-dim');
+                    Terminal.print('  Includes:', 'output-dim');
+                    Terminal.print('  • Cloud architecture design', 'output-response');
+                    Terminal.print('  • Migration execution', 'output-response');
+                    Terminal.print('  • Security implementation', 'output-response');
+                    Terminal.print('  • Post-migration support (30 days)', 'output-response');
+                    Terminal.print('  Price: 10,000 - 50,000 EUR', 'output-success');
+                    Terminal.print('');
+                    Terminal.print('  DATA RECOVERY', 'output-header');
+                    Terminal.print('  • Assessment: 200 EUR (waived if proceeding)', 'output-dim');
+                    Terminal.print('  • Recovery: Variable based on complexity', 'output-dim');
+                    Terminal.print('  • "No data, no fee" for most cases', 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  All prices exclude VAT. Custom packages available.', 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  Type "consultation" to discuss your project', 'output-success');
+                    Terminal.print('');
+                }
+            },
+
+            projects: {
+                execute: function() {
+                    Terminal.print('');
+                    Terminal.print('PORTFOLIO & CASE STUDIES', 'output-header');
+                    Terminal.print('─'.repeat(50), 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  NOTABLE PROJECTS', 'output-info');
+                    Terminal.print('');
+                    Terminal.print('  [1] NeoDCP Player Development', 'output-header');
+                    Terminal.print('  Company: ProtoWay s.r.o.', 'output-dim');
+                    Terminal.print('  Scope: Professional DCP playback software', 'output-response');
+                    Terminal.print('  Technologies: C++, multimedia processing, encryption', 'output-response');
+                    Terminal.print('  URL: https://www.neodcp.com', 'output-info');
+                    Terminal.print('');
+                    Terminal.print('  [2] Industrial Automation Systems', 'output-header');
+                    Terminal.print('  Company: METREX s.r.o.', 'output-dim');
+                    Terminal.print('  Scope: Software development for metallurgy sector', 'output-response');
+                    Terminal.print('  Technologies: SCADA, industrial protocols, databases', 'output-response');
+                    Terminal.print('');
+                    Terminal.print('  [3] Multi-Domain Consulting', 'output-header');
+                    Terminal.print('  Expertise areas:', 'output-dim');
+                    Terminal.print('  • Hardware/Software integration', 'output-response');
+                    Terminal.print('  • Security architecture design', 'output-response');
+                    Terminal.print('  • Legal system experience (expert testimony)', 'output-response');
+                    Terminal.print('  • Reverse engineering & analysis', 'output-response');
+                    Terminal.print('');
+                    Terminal.print('  CONFIDENTIAL CLIENT WORK', 'output-info');
+                    Terminal.print('  Additional case studies available under NDA', 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  Type "consultation" to discuss your project', 'output-success');
+                    Terminal.print('');
+                }
+            },
+
+            certifications: {
+                execute: function() {
+                    Terminal.print('');
+                    Terminal.print('EXPERTISE & QUALIFICATIONS', 'output-header');
+                    Terminal.print('─'.repeat(50), 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  PROFESSIONAL BACKGROUND', 'output-info');
+                    Terminal.print('');
+                    Terminal.print('  Multi-Domain Expertise:', 'output-header');
+                    Terminal.print('  • Software/Hardware Development', 'output-response');
+                    Terminal.print('  • System Administration & Security', 'output-response');
+                    Terminal.print('  • Database Management & Optimization', 'output-response');
+                    Terminal.print('  • Data Recovery & Digital Forensics', 'output-response');
+                    Terminal.print('  • Reverse Engineering Analysis', 'output-response');
+                    Terminal.print('  • Legal System Experience', 'output-response');
+                    Terminal.print('  • Applied Psychology in Security', 'output-response');
+                    Terminal.print('');
+                    Terminal.print('  Business Experience:', 'output-header');
+                    Terminal.print('  • ProtoWay s.r.o. - DCP Player Development', 'output-response');
+                    Terminal.print('  • METREX s.r.o. - Software & Metallurgy', 'output-response');
+                    Terminal.print('  • Cross-industry consulting', 'output-response');
+                    Terminal.print('');
+                    Terminal.print('  Technical Skills:', 'output-header');
+                    Terminal.print('  • Languages: C/C++, Python, PHP, JavaScript, SQL', 'output-response');
+                    Terminal.print('  • Systems: Linux, Windows, embedded systems', 'output-response');
+                    Terminal.print('  • Security: Penetration testing, forensics, encryption', 'output-response');
+                    Terminal.print('  • Cloud: AWS, Azure, GCP architecture', 'output-response');
+                    Terminal.print('  • Hardware: Electronics repair, data recovery', 'output-response');
+                    Terminal.print('');
+                    Terminal.print('  APPROACH', 'output-info');
+                    Terminal.print('  Practical, real-world problem solving over credentials.', 'output-dim');
+                    Terminal.print('  20+ years combined experience across multiple domains.', 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  Type "projects" to see work examples', 'output-success');
+                    Terminal.print('');
+                }
+            },
+
+            availability: {
+                execute: function() {
+                    Terminal.print('');
+                    Terminal.print('CURRENT AVAILABILITY', 'output-header');
+                    Terminal.print('─'.repeat(50), 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  STATUS: Accepting New Projects', 'output-success');
+                    Terminal.print('');
+                    Terminal.print('  Lead Times:', 'output-info');
+                    Terminal.print('  • Emergency response: 24 hours', 'output-warning');
+                    Terminal.print('  • Security audits: 2-3 weeks', 'output-response');
+                    Terminal.print('  • Consulting projects: 1-2 weeks', 'output-response');
+                    Terminal.print('  • Custom development: Variable', 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  Working Hours:', 'output-info');
+                    Terminal.print('  • Standard: Monday-Friday, 09:00-17:00 CET', 'output-response');
+                    Terminal.print('  • Emergency: 24/7 critical response', 'output-warning');
+                    Terminal.print('  • Remote: Flexible scheduling for international clients', 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  Type "consultation" to check specific dates', 'output-success');
+                    Terminal.print('');
+                }
+            },
+
+            emergency: {
+                execute: function() {
+                    Terminal.print('');
+                    Terminal.print('⚠️  EMERGENCY SUPPORT  ⚠️', 'output-warning');
+                    Terminal.print('─'.repeat(50), 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  24/7 CRITICAL RESPONSE', 'output-header');
+                    Terminal.print('');
+                    Terminal.print('  For immediate assistance with:', 'output-info');
+                    Terminal.print('  • Active security breaches', 'output-error');
+                    Terminal.print('  • Ransomware attacks', 'output-error');
+                    Terminal.print('  • Critical data loss', 'output-error');
+                    Terminal.print('  • System failures affecting operations', 'output-error');
+                    Terminal.print('');
+                    Terminal.print('  RESPONSE TIME: Within 24 hours', 'output-warning');
+                    Terminal.print('  RATE: 180 EUR/hour (emergency rate)', 'output-warning');
+                    Terminal.print('');
+                    Terminal.print('  CONTACT METHOD', 'output-header');
+                    Terminal.print('  Phone: [PHONE_NUMBER]', 'output-success');
+                    Terminal.print('  (For voice calls in critical situations)', 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  For non-emergency inquiries:', 'output-info');
+                    Terminal.print('  Type "contact-form" to submit a request', 'output-response');
+                    Terminal.print('');
+                }
+            },
+
+            'contact-form': {
+                execute: function() {
+                    Terminal.print('');
+                    Terminal.print('CONTACT FORM', 'output-header');
+                    Terminal.print('─'.repeat(50), 'output-dim');
+                    Terminal.print('');
+                    Terminal.print('  Opening contact form...', 'output-info');
+                    Terminal.print('');
+
+                    // Trigger the contact form modal
+                    if (window.ContactForm) {
+                        ContactForm.show();
+                    } else {
+                        Terminal.print('  Contact form unavailable. Please try again later.', 'output-error');
                     }
                 }
             }
