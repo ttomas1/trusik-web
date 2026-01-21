@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background-color: #0a0a0a;
+    font-family: 'Courier New', 'Lucida Console', Monaco, monospace;
+    font-size: 14px;
+    color: #00ff00;
+    overflow: hidden;
+}
+
+#terminal {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #0a0a0a 0%, #0d1117 100%);
+}
+
+#output {
+    flex: 1;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.5;
+    padding-bottom: 10px;
+}
+
+#output::-webkit-scrollbar {
+    width: 8px;
+}
+
+#output::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+#output::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+#output::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
+
+#input-line {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    border-top: 1px solid #222;
+}
+
+#prompt {
+    color: #00ff00;
+    margin-right: 10px;
+    user-select: none;
+}
+
+#command-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #00ff00;
+    font-family: inherit;
+    font-size: inherit;
+    caret-color: #00ff00;
+}
+
+#command-input::selection {
+    background: #00ff00;
+    color: #0a0a0a;
+}
+
+.output-line {
+    margin: 2px 0;
+}
+
+.output-command {
+    color: #888;
+}
+
+.output-response {
+    color: #00ff00;
+}
+
+.output-error {
+    color: #ff4444;
+}
+
+.output-warning {
+    color: #ffaa00;
+}
+
+.output-info {
+    color: #00aaff;
+}
+
+.output-success {
+    color: #00ff00;
+}
+
+.output-header {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.output-dim {
+    color: #666;
+}
+
+/* ASCII art styling */
+.ascii-art {
+    color: #00ff00;
+    line-height: 1.2;
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+#command-input:focus {
+    animation: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    html, body {
+        font-size: 14px;
+    }
+
+    #terminal {
+        padding: 12px;
+        padding-top: env(safe-area-inset-top, 12px);
+        padding-bottom: env(safe-area-inset-bottom, 12px);
+        padding-left: env(safe-area-inset-left, 12px);
+        padding-right: env(safe-area-inset-right, 12px);
+    }
+
+    #output {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #input-line {
+        flex-wrap: wrap;
+        gap: 5px;
+        padding: 10px 0;
+    }
+
+    #prompt {
+        font-size: 12px;
+        flex-shrink: 0;
+    }
+
+    #command-input {
+        font-size: 16px; /* Prevents iOS zoom on focus */
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    html, body {
+        font-size: 13px;
+    }
+
+    #terminal {
+        padding: 8px;
+    }
+
+    #prompt {
+        font-size: 11px;
+    }
+
+    #input-line {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #command-input {
+        width: 100%;
+        padding: 8px 0;
+    }
+
+    .output-line {
+        word-break: break-word;
+    }
+}
+
+/* Scanline effect (optional aesthetic) */
+#terminal::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.1) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    z-index: 1000;
+}
