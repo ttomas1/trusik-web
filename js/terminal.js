@@ -73,6 +73,40 @@
     };
 
     // ============================================
+    // LOGGER: Session Command Logging
+    // ============================================
+    const Logger = {
+        sessionId: null,
+
+        init: function() {
+            fetch('/api/session/start', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    this.sessionId = data.sessionId;
+                })
+                .catch(() => {
+                    // Silently fail - logging is not critical
+                });
+        },
+
+        log: function(command) {
+            if (!this.sessionId) return;
+
+            fetch('/api/log', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    sessionId: this.sessionId,
+                    command: command,
+                    timestamp: new Date().toISOString()
+                })
+            }).catch(() => {
+                // Silently fail
+            });
+        }
+    };
+
+    // ============================================
     // TERMINAL: Core Functionality
     // ============================================
     const Terminal = {
@@ -89,6 +123,9 @@
             this.bindEvents();
             this.showWelcome();
             this.input.focus();
+
+            // Initialize session logging
+            Logger.init();
 
             // Refocus on click anywhere
             document.addEventListener('click', () => this.input.focus());
@@ -162,6 +199,9 @@
                 }
             }
             this.historyIndex = this.history.length;
+
+            // Log command
+            Logger.log(rawInput);
 
             // Parse and execute
             const parts = rawInput.toLowerCase().split(/\s+/);
